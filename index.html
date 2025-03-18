@@ -56,6 +56,8 @@
     href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
   />
 
+  <!-- swiper -->
+  <!-- https://swiperjs.com/demos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -456,16 +458,20 @@
 
 <style>
   .comparison-slider img {
-    width: 400px;   /* 统一宽度 */
-    height: 400px;  /* 统一高度 */
-    object-fit: cover; /* 确保填充但不变形 */
-  }
+  width: 400px;  
+  height: 400px;  
+  object-fit: cover;  
+  transform: none !important;  /* 禁止放大 */
+  transition: none !important; /* 取消动画 */
+  max-width: 400px !important; 
+  max-height: 400px !important; 
+}
 
-  .comparison-slider {
-    width: 400px;  /* 控制整体宽度 */
-    height: 400px; /* 控制整体高度 */
-    overflow: hidden; /* 防止溢出 */
-  }
+.comparison-slider img:hover {
+  transform: none !important;
+  scale: 1 !important;
+  transition: none !important;
+}
 </style>
 
 <section class="section" style="width: 900px; margin: auto;">

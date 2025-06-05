@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Feature 3DGS: Supercharging 3D Gaussian Splatting to Enable Distilled Feature Fields">
-  <meta name="keywords" content="Feature, 3DGS, 3D Gaussian Splatting, Distillation, Radiance Fields, Feature Fields">
+        content="FlexGS: Train Once, Deploy Everywhere with Many-in-One Flexible 3D Gaussian Splatting">
+  <meta name="keywords" content="3DGS, compression, efficiency, elastic, flexible, radiancefield">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
@@ -244,8 +244,6 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <!-- <h1 class="title is-1 publication-title">Feature 3DGS: Supercharging 3D Gaussian Splatting to Enable Distilled Feature Fields</h1> -->
-          <!-- <h1 class="title is-1 publication-title">Feature 3DGS 🪄</h1> -->
           <h1 class="title is-2 publication-title">
             <span class="gradient-text">FlexGS</span>: Train Once, Deploy Everywhere with Many-in-One Flexible 3D Gaussian Splatting
           </h1>
@@ -275,15 +273,6 @@
                 <a href="https://www.ece.utexas.edu/people/faculty/atlas-wang">Zhangyang Wang</a><sup>2</sup>,</span>
             </div>
 
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of California, Los Angeles</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>2</sup>University of Texas at Austin</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>3</sup>DEVCOM Army Research Laboratory</span>
-          </div> -->
           <style>
             .univerity-block {
                 margin-right: 14px;
@@ -296,7 +285,7 @@
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block">*Denotes Equal Contribution, ‡Denotes Project Lead</span>
+            <span class="author-block">* Denotes Equal Contribution, ‡ Denotes Project Lead</span>
           </div>
 
           <!-- <div class="is-size-4 publication-authors">
@@ -403,51 +392,31 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Pipeline. -->
-    <!-- <h3 class="title is-4">Methodology</h3>
-    <div class="content has-text-justified">
-      <p>
-      </p>
-    </div>
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <img src="./media/pipeline.png"
-             class="interpolation-image"
-             alt="Interpolate start reference image."/>
-        <p>...</p>
-      </div>
-    </div> -->
-    <!--/ Pipeline. -->
   </div>
 </section>
 
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Elastic Inference</h2>
-    <div class="content has-text-justified">
-      <div class="columns is-centered">
-        <figure class="image is-centered" style="width: 85%; margin: auto;">
-          <img src="./media/teaser.png" alt="Teaser Image">
-        </figure>
+    <div class="content">
+      <div class="image is-centered" style="width: 100%; text-align: center;">
+        <img src="./media/teaser.png" alt="Teaser Image" style="width: 90%; margin: auto;">
       </div>
-      <p>
+      <p style="margin-top: 20px;" class=" has-text-justified">
         FlexGS enables elastic inference, balancing quality and computational costs for diverse deployment scenarios with dynamic compression at any ratio without re-training.
       </p>
     </div>
   </div>
 </section>
 
-<section class="section" style="width: 900px; margin: auto;">
+<section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Pipeline of FlexGS</h2>
-    <div class="content has-text-justified">
-      <div class="columns is-centered">
-        <figure class="image is-centered">
-          <img src="./media/pipeline.png" alt="Pipeline Image">
-        </figure>
+    <div class="content">
+      <div class="image is-centered" style="width: 100%; text-align: center;">
+        <img src="./media/pipeline.png" alt="Pipeline Image" style="width: 90%; margin: auto;">
       </div>
-      <p>
+      <p style="margin-top: 20px;" class=" has-text-justified">
         (a) Adaptive Gaussian Selector: utilize a GsNet to get the differentiable mask and Global Important as guidance for adaptive selection; 
         (b) Gaussian Transform Field: query from a Spatial-Ratio Neural Field and get the transforms of Gaussian attributes under the given elastic ratio, Then supervise the rendering image with the GT of the view.
       </p>
@@ -474,7 +443,7 @@
 }
 </style>
 
-<section class="section" style="width: 900px; margin: auto;">
+<section class="section">
   <h2 class="title is-3 has-text-centered">Experimental Results</h2>
 
   <div class="columns is-centered" style="gap: 0px;">

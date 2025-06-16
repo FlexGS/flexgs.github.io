@@ -198,46 +198,6 @@
 </head>
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav> -->
-
 
 <section class="hero">
   <div class="hero-body">
@@ -294,7 +254,7 @@
             <a href="https://cvpr.thecvf.com/">CVPR 2024, Seattle</a>
           </div> -->
 
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-5 publication-authors" style="margin-top: 20px; margin-bottom: 20px;">
             <span class="univerity-block" style="color: rgb(169, 16, 151);">CVPR 2025</span>
           </div>
 
@@ -324,7 +284,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_FlexGS_Train_Once_Deploy_Everywhere_with_Many-in-One_Flexible_3D_Gaussian_CVPR_2025_paper.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -377,17 +337,6 @@
             We introduce a tiny learnable module that controls Gaussian selection based on the input percentage, along with a transformation module that adjusts the selected Gaussians to complement the performance of the reduced model. 
             Comprehensive experiments on ZipNeRF, MipNeRF and Tanks&Temples scenes demonstrate the effectiveness of our approach. Code will be publicly available.
           </p>
-          
-          <!-- <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Video</h2>
-              <div class="publication-video">
-                <iframe src="https://www.youtube.com/embed/h4zmQsCV_Qw?si=Bd1LWETR_c8Uxarf"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-            </div>
-          </div> -->
-          <!--/ Paper video. -->
         </div>
       </div>
     </div>
@@ -403,7 +352,8 @@
         <img src="./media/teaser.png" alt="Teaser Image" style="width: 90%; margin: auto;">
       </div>
       <p style="margin-top: 20px;" class=" has-text-justified">
-        FlexGS enables elastic inference, balancing quality and computational costs for diverse deployment scenarios with dynamic compression at any ratio without re-training.
+        Compared to post-processing methods that require ratio-specific fine-tuning, such as LightGS, FlexGS can infer the selection and transformation of Gaussians for any given ratio without the need for re-training.
+        This enables flexible deployment scenarios, like web, smartphones, PC, etc., at arbitrary compression ratios.
       </p>
     </div>
   </div>
@@ -425,13 +375,29 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Inference-Time Efficiency</h2>
+    <div class="content">
+      <div class="image is-centered" style="width: 100%; text-align: center;">
+        <video id="v0" width="100%" autoplay loop muted controls>
+          <source src="media/demo_video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <p style="margin-top: 20px;" class=" has-text-justified">
+        We present an interactive demo (on RTX 4070 Ti) comparing our method with the baseline LightGS, where a GUI panel allows users to specify the desired compression ratio. Unlike LightGS that requires ratio-specific fine-tuning, our approach significantly reduces inference-time overhead and achieves up to 9&#215; faster processing during inference.
+    </div>
+  </div>
+</section>
+
+
 <style>
   .comparison-slider img {
   width: 400px;  
   height: 400px;  
   object-fit: cover;  
-  transform: none !important;  /* 禁止放大 */
-  transition: none !important; /* 取消动画 */
+  transform: none !important;
+  transition: none !important;
   max-width: 400px !important; 
   max-height: 400px !important; 
 }
